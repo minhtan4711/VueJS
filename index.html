@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Practice VueJs</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <input type="text" v-on:input="changeTitle"> -->
+        <!-- <h1 v-once> {{ title }} </h1>
+        <p>
+            {{ sayHello() }} - <a v-bind:href="link">Google</a>
+        </p>
+        <hr>
+        <p v-html="finishedLink"></p> -->
+        <button v-on:click="increase(2, $event)">Click Me</button> <!--event là thuộc tính mặc định nên khi thêm vào thì có thêm dấu $-->
+        <p> {{ counter }} </p>
+        <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                // title: 'Hello World!',
+                // link: 'http://goolge.com',
+                // finishedLink: '<a href="http://google.com">Google</a>'
+                counter: 0,
+                x: 0,
+                y: 0,
+
+            },
+            methods: {
+                // changeTitle: function(event) {
+                //     this.title = event.target.value; //target chính là input field
+                // }
+                // sayHello: function () {
+                //     this.title = 'Hello!'
+                //     return this.title;
+                // }
+                increase: function (step) {
+                    this.counter += 2;
+                },
+                updateCoordinates: function(event) {
+                    this.x = event.clientX
+                    this.y = event.clientY
+                }
+            }
+        }); 
+    </script>
+</body>
+
+</html>
