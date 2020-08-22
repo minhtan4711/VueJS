@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="dynamicstyling.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--sử dụng class để thay đổi màu-->
+    <!-- <div id="app">
+        <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
+        <div class="demo" :class="{red: attachRed}"></div>
+        <div class="demo" :class="[color, {red: attachRed}]"></div>
+        <hr>
+        <input type="text" v-model="color">
+
+    </div> -->
+
+    <!--Không sử dụng class-->
+    <div id="app">
+        <div class="demo" :style="{backgroundColor: color}"></div>
+        <div class="demo" :style="myStyle"></div>
+        <div class="demo" :style="[myStyle, {height: width + 'px'}]"></div> <!--sử dụng mảng-->
+        <hr>
+        <input type="text" v-model="color">
+        <input type="text" v-model="width">
+
+    </div>
+
+
+
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                color: 'gray',
+                width: 100
+                // attachRed: false,
+                // color: 'green'
+            },
+            // computed: {
+            //     divClasses: function () {
+            //         return {
+            //             red: this.attachRed,
+            //             blue: !this.attachRed,
+            //         }
+            //     }
+            // }
+            computed: {
+                myStyle: function() {
+                    return {
+                        backgroundColor: this.color,
+                        width: this.width + 'px'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
