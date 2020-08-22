@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Practice VueJs</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <input type="text" v-on:input="changeTitle"> -->
+        <!-- <h1 v-once> {{ title }} </h1>
+        <p>
+            {{ sayHello() }} - <a v-bind:href="link">Google</a>
+        </p>
+        <hr>
+        <p v-html="finishedLink"></p> -->
+        <!-- <button v-on:click="increase(2, $event)">Click Me</button>
+        <button v-on:click="counter--">Click</button>
+        event là thuộc tính mặc định nên khi thêm vào thì có thêm dấu $-->
+        <!-- <p> {{ counter * 2 > 10 ? 'Greater than 10' : 'Lower than 10' }} </p>
+        <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}
+            - <span v-on:mousemove.stop="">DEADSPOT</span>
+        </p>
+        <input type="text" v-on:keyup.enter.space="alertMe"> -->
+        <button v-on:click="counter++">Increase</button>
+        <button v-on:click="counter--">Decrease</button>
+        <button v-on:click="secondCounter++">Increase Second</button>
+        <p>Counter: {{ counter }} | {{ secondCounter }} </p>
+        <p>Result: {{ result() }} | {{ output }} </p>
+
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                // title: 'Hello World!',
+                // link: 'http://goolge.com',
+                // finishedLink: '<a href="http://google.com">Google</a>'
+                counter: 0,
+                secondCounter: 0,
+            },
+            computed: { //dependent properties 
+                output: function () {
+                    console.log('Computed')
+                    return this.counter > 5 ? 'Greater than 5' : 'Lower than 5'
+                }
+            },
+            watch: {
+                counter: function(value) {
+                    var vm = this;
+                    setTimeout(function(){
+                        vm.counter = 0;
+                    },2000);
+                }
+            },
+            methods: {
+                // changeTitle: function(event) {
+                //     this.title = event.target.value; //target chính là input field
+                // }
+                // sayHello: function () {
+                //     this.title = 'Hello!'
+                //     return this.title;
+                // }
+                // increase: function (step) {
+                //     this.counter += 2;
+                // },
+                // updateCoordinates: function (event) {
+                //     this.x = event.clientX
+                //     this.y = event.clientY
+                // },
+                // alertMe: function(event) {
+                //     alert('Hello Uong Minh Tan');
+                // } 
+
+                result: function() {
+                    console.log('Method')
+                    return this.counter > 5 ? 'Greater than 5' : 'Lower than 5'
+                }
+            }
+        }); 
+    </script>
+</body>
+
+</html>
