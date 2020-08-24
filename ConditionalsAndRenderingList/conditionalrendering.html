@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body> 
+    <div id="app">
+        <!-- <p v-if="show">Do you see me</p>
+        <p v-else>Now you see me</p>
+
+        template sẽ không hiển thị trên cây DOM
+
+        <template v-if="show">
+            <h1>Heading</h1>
+            <p>Inside a template</p>
+        </template>
+        <p>Can you also see me?</p>
+        <button @click="show = !show">Switch</button> -->
+        <ul>
+            <li v-for="(ingredient,index) in ingredients" :key="ingredient">{{ ingredient }} - {{ index }}</li>
+        </ul>
+        <button @click="ingredients.push('spice')">Add</button>
+        <!--lặp trong một object-->
+        <hr>
+
+        <ul>
+            <li v-for="person in persons">
+                <div v-for="(value,key) in person"> {{ key }} - {{ value }} </div>
+            </li>
+        </ul>
+
+        <hr>
+
+
+        <template v-for="(ingrdient,index) in ingredients">
+            <h1>{{ ingrdient }}</h1>
+            <p>{{ index }}</p>
+        </template>
+
+    </div>
+
+
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                // show: true
+                ingredients: ['meat', 'fruit', 'cookies'],
+                persons: [
+                    {name: 'Max', age: 27, color: 'red'},
+                    {name: 'Anna', age: 'unknown', color: 'blue'}
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
