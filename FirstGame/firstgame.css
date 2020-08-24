@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+    border: 10px solid #EEEEEE;
+}
+
+
+/*begin character*/
+.character {
+    width: 90%;
+    margin: 16px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.character #you {
+    width: 35%;
+    border: 5px solid #00adb5;
+    text-align: center;
+    padding: 16px;
+}
+
+.character #you #you-blood-bar {
+    margin-top: 32px;
+    height: 32px;
+    background-color: green;
+    color: white;
+    text-align: right;
+    font-size: 26px;
+    padding: 5px;
+}
+
+
+.character #monster {
+    width: 35%;
+    border: 5px solid #00adb5;
+    text-align: center;
+    padding: 16px;
+}
+
+.character #monster #monster-blood-bar {
+    margin-top: 32px;
+    height: 32px;
+    background-color: green;
+    color: white;
+    text-align: left;
+    font-size: 26px;
+    padding: 5px;
+}
+/*end character*/
+
+
+/*begin control*/
+.control {
+    width: 90%;
+    margin: 128px auto;
+    text-align: center;
+}   
+
+.control #start {
+    width: 15%;
+    text-transform: uppercase;
+    background-color: yellow;
+    border: 2px solid #EEEEEE;
+    font-weight: bold;
+    font-size: 22px;
+    color: palevioletred;
+    padding: 12px;
+    text-align: center;
+}
+
+#play {
+    /* display: none; */
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 64px;
+}
+
+#play #attack {
+    width: 15%;
+    background-color: #cf1b1b;
+    color: #423144;
+    text-transform: uppercase;
+    border: 2px solid #EEEEEE;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 12px;
+    text-align: center;
+    
+}
+
+#play #special-attack {
+    width: 15%;
+    background-color: #900d0d;
+    color: #423144;
+    text-transform: uppercase;
+    border: 2px solid #EEEEEE;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 12px;
+    text-align: center;
+}
+
+#play #heal {
+    width: 15%;
+    background-color: #81b214;
+    color: #bfdcae;
+    text-transform: uppercase;
+    border: 2px solid #EEEEEE;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 12px;
+    text-align: center;
+}
+
+#play #giveup {
+    width: 15%;
+    background-color: #ffd571;
+    color: #56556e;
+    text-transform: uppercase;
+    border: 2px solid #EEEEEE;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 12px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/*end control*/
+
+

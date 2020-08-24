@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="firstgame.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+
+        <!--begin character-->
+        <div class="character">
+
+            <div id="you">
+                <h1 class="title">YOU</h1>
+                <div id="you-blood-bar"> {{ blood }} </div>
+            </div>
+
+            <div id="monster">
+                <h1 class="title">MONSTER</h1>
+                <div id="monster-blood-bar"> {{ blood }} </div>
+            </div>
+
+        </div>
+        <!--end character-->
+
+        <!--begin control-->
+        <div class="control">
+
+            <button id="start" @click="begin">
+                New Game
+            </button>
+
+            <div id="play">
+
+
+
+                <button id="attack" @click="fight">
+                    Attack
+                </button>
+
+                <button id="special-attack" @click="superFight">
+                    Special Attack
+                </button>
+
+                <button id="heal" @click="healUp">
+                    Heal
+                </button>
+
+                <button id="giveup" @click="restart">
+                    Give Up
+                </button>
+
+
+
+
+            </div>
+
+        </div>
+        <!--end control-->
+
+        <!--begin status-->
+        <div id="status">
+            
+        </div>
+        <!--end status-->
+
+    </div>
+
+
+
+    <script src="firstgame.js"></script>
+</body>
+
+</html>
