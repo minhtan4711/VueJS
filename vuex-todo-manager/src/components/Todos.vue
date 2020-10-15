@@ -29,7 +29,7 @@ export default {
   name: "Todos",
   //only one methods => methods: mapActions(['fetchTodos']),
   methods: {
-    ...mapActions(["fetchTodos", "deleteTodo", "updateTodo"]), //!!!NOTE about ...
+    ...mapActions(["fetchTodos", "deleteTodo", "updateTodo"]), //!!!NOTE about ... done
     onDblClick(todo) {
       const updTodo = {
         id: todo.id,

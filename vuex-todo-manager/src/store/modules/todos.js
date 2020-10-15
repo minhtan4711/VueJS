@@ -56,7 +56,7 @@ const mutations = {
     (state.todos = state.todos.filter((todo) => todo.id !== id)),
   updateTodo: (state, updTodo) => {
     //giu nguyen vi tri todo khi update
-    const index = state.todos.findIndex((todo) => (todo.id == updTodo.id));
+    const index = state.todos.findIndex((todo) => todo.id == updTodo.id);
     if (index !== -1) {
       state.todos.splice(index, 1, updTodo);
     }
